@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", {
 
 exports.default = function (app) {
   // Insert routes below
-  //app.use('/api/things', require('./api/thing'));
+  app.use('/api/tracking', require('./app/api/tracking'));
   app.use('/api/users', require('./app/api/user'));
 
   app.use('/auth', require('./app/api/auth').default);

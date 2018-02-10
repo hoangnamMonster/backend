@@ -25,7 +25,8 @@
     "passport-google-oauth20": "^1.0.0",
     "passport-local": "^1.0.0",
     "passport-twitter": "^1.0.3",
-    "tap-nyan": "^1.1.0"
+    "tap-nyan": "^1.1.0",
+    "fast-json-patch": "^1.0.0"
   },
   "engines": {
     "node": "latest",
