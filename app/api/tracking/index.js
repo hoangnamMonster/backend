@@ -8,7 +8,7 @@ var router = express.Router();
 
 router.get('/', auth.isAuthenticated(), controller.index);
 router.get('/:id', auth.isAuthenticated(), controller.show);
-router.get('/findbytracking/:bill', auth.isAuthenticated(), controller.FindByTrackingNumber);
+router.get('/findbytracking/:bill', controller.FindByTrackingNumber);
 router.post('/', auth.isAuthenticated(), controller.create);
 router.put('/updatetracking/:id', auth.isAuthenticated(), controller.upsert);
 router.patch('/:id', auth.isAuthenticated(), controller.patch);
