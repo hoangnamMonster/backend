@@ -81,19 +81,21 @@ export function show(req, res) {
 
 // Creates a new Tracking in the DB
 export function create(req, res) {
-  return Tracking.create(req.body)
+  Reflect.deleteProperty(req.body.tracking, '_id');
+  return Tracking.create(req.body.tracking)
     .then(respondWithResult(res, 201))
     .catch(handleError(res));
 }
 
 // Upserts the given Tracking in the DB at the specified ID
 export function upsert(req, res) {
-  if (req.body._id) {
-    Reflect.deleteProperty(req.body, '_id');
+  if (req.body.tracking._id) {
+    Reflect.deleteProperty(req.body.tracking, '_id');
+    Reflect.deleteProperty(req.body.tracking, '__v');
   }
   return Tracking.findOneAndUpdate({
       _id: req.params.id
-    }, req.body, {
+    }, req.body.tracking, {
       new: true,
       upsert: true,
       setDefaultsOnInsert: true,
