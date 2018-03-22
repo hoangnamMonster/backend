@@ -17,8 +17,8 @@ var TrackingSchema = new Schema({
     pick_up_by : String,
     delivery_by : String,
     status : String,
-    delivery_date : String,
-    department_receive : Date,
+    delivery_date: Date,
+    department_receive : String,
     price_buy : Number,
     price_sale : Number
 })
